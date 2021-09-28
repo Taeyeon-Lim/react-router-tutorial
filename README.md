@@ -35,4 +35,59 @@
   localhost:3000/about?a=2&b=2 | _{a: '2', b: '2'}_
   localhost:3000/about?a=2&b=2&detail=true | _{a: '2', b: '2', detail: 'true'}_
 
-  <br/><br/>
+## react-router 에서의 컴포넌트 렌더링
+
+**[1. Route의 자식으로 렌더링]**
+
+```javaScript
+function App() {
+  return (
+    <BrowserRouter>
+      <Route path='/' exact />
+      // 자식으로 렌더링!
+      <Route path='/profile'>
+        <Profile />
+      </Route>
+    </BrowserRouter>
+  )
+}
+```
+
+- 단점
+  route의 props인, **location / history / match 사용 불가.**
+
+**[2. Route component로 렌더링]**
+
+```javaScript
+functino App() {
+  return (
+    <BrowserRouter>
+      // 컴포넌트로 렌더링
+      <Route path='profile' component={Profile} />
+    </BrowserRouter>
+  )
+}
+```
+
+- 단점
+  매번 기존 component를 언마운트하고, 새 컴포넌트를 마운트.
+
+**[3. Route render를 이용하여 렌더링]**
+
+```javaScript
+function App() {
+  render(
+    <BrowserRouter>
+      // render를 사용한 리마운트 없는 렌더링
+      <Route path='/' render={() => <About />} />
+      <Route path='profile' render={(props) => <Profile {...props} />} />
+    </BrowserRouter>
+  )
+}
+```
+
+- 장점
+  render props(history, location, match) 사용 가능
+  inline function에서 리턴하는 컴포넌트 리마운트 X
+
+<br/><br/>

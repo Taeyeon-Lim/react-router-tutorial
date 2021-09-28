@@ -14,7 +14,7 @@ function Profile({ match }) {
   const profile = profileData[username];
 
   if (!profile) {
-    return <div>해당 사용자가 없습니다</div>;
+    return <div>선택된 사용자가 없습니다</div>;
   }
   return (
     <div>
