@@ -17,8 +17,6 @@ function App() {
       <hr />
       <Route path='/' component={Home} exact />
       <Route path='/about' component={About} />
-      {/* http://localhost:3000/profiles/taeyeon */}
-      {/* http://localhost:3000/profiles/sourcetree */}
       <Route path='/profiles/:username' component={Profile} />
     </div>
   );

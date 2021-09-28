@@ -1,6 +1,8 @@
 import React from 'react';
 
-function About() {
+function About({ location }) {
+  // 개발자 도구에서 search: "?a=2"를 확인 => 추출하기 위해, qs 라이브러리 설치
+  console.log(location);
   return (
     <div>
       <h1>소개</h1>
