@@ -21,11 +21,18 @@
 - URL 사용하기( Profile 컴포넌트에 존재하는 특정 값 조회 )
   데이터 | 주소값
   ------ | ------
-  taeyeon | \http://localhost:3000/profiles/taeyeon
-  sourcetree | http://localhost:3000/profiles/sourcetree
-  없는 사용자 | http://localhost:3000/profiles/아무거나입력
+  taeyeon | localhost:3000/profiles/taeyeon
+  sourcetree | localhost:3000/profiles/sourcetree
+  없는 사용자 | localhost:3000/profiles/아무거나입력
 
 **[Query 쿼리]**: 다양한 옵션의 조회, 주로 검색에 사용( Ex. /filter?type=book&sort_by=date )
 
 - 쿼리 추출을 위한 라이브러리( yarn add qs )
+- Query 사용하기( 쿼리 값 받기 )
+  주소값 | 콘솔 확인 _(결과값은 문자열 )_
+  ------ | ------
+  localhost:3000/about?a=2 | _{a: '2'}_
+  localhost:3000/about?a=2&b=2 | _{a: '2', b: '2'}_
+  localhost:3000/about?a=2&b=2&detail=true | _{a: '2', b: '2', detail: 'true'}_
+
   <br/><br/>
