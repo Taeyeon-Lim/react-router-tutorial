@@ -128,4 +128,11 @@ function App() {
   > 여러 라우트 중 가장 먼저 매칭된 컴포넌트'만' 표시함
   > 주로, not found page(404) 같은 곳에 사용
 
+- **[NavLink 기능]**
+
+  > Link와 유사
+  > 해당 링크의 주소 = 브라우저의 주소, 특정 스타일을 지정할 수 있다
+
+- 이 밖에 prompt, Redirect, Route Config 등등...
+
 <br/><br/>

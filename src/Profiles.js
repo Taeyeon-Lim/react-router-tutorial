@@ -1,4 +1,4 @@
-import { Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import Profile from './Profile';
 
 function Profiles() {
@@ -7,10 +7,20 @@ function Profiles() {
       <h2>유저 리스트</h2>
       <ul>
         <li>
-          <Link to='/profiles/taeyeon'>taeyeon</Link>
+          <NavLink
+            to='/profiles/taeyeon'
+            activeStyle={{ background: 'black', color: 'white' }}
+          >
+            taeyeon
+          </NavLink>
         </li>
         <li>
-          <Link to='/profiles/sourcetree'>source tree</Link>
+          <NavLink
+            to='/profiles/sourcetree'
+            activeStyle={{ background: 'black', color: 'white' }}
+          >
+            source tree
+          </NavLink>
         </li>
       </ul>
 
