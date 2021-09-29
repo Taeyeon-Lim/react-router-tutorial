@@ -118,7 +118,7 @@ function App() {
   > > location: 어디에서 호출해도 **동일한 Data**를 가리킴
   > > match: 자신이 **렌더링된 위치 기준**으로 match 값을 받아옴
   > >
-  > > > ( 현재 위치가 profiles라면, App의 라우터에서 url 파라미터를 받지 않기 때문에 **없음**... )
+  > > > ( 현재 위치가 profiles라면, App의 라우터에서 url 파라미터를 받지 않기 때문에 **없음**... )  
   > > > ( 현재 위치가 profile이라면, 경로(path)가 "/profiles/:username"으로 설정되어있고 **파라미터 호출**도 가능 )
   >
   > 즉, witRouter는 라우터로 사용되지 않은 컴포넌트에서 조건부로 이동해야할 때 자주 사용 (ex. 로그인)
@@ -134,5 +134,13 @@ function App() {
   > 해당 링크의 주소 = 브라우저의 주소, 특정 스타일을 지정할 수 있다
 
 - 이 밖에 prompt, Redirect, Route Config 등등...
+
+<br />
+
+---
+
+## useReactRouter Hook
+
+- useReactRouter Hook을 통해서, { location, match, history 객체 }를 사용할 수 있음
 
 <br/><br/>
