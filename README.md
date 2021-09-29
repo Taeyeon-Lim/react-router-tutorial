@@ -90,4 +90,11 @@ function App() {
   render props(history, location, match) 사용 가능
   inline function에서 리턴하는 컴포넌트 리마운트 X
 
+---
+
+## react router 부가기능
+
+- [history 객체]
+  컴포넌트에서 라우터에 직접 접근 가능해진다. (사용 예시...특정 함수 호출 시, 특정 경로 이동 or 페이지 이탈 방지)
+
 <br/><br/>
