@@ -1,3 +1,5 @@
+import WithRouterSample from './WithRouterSample';
+
 const profileData = {
   taeyeon: {
     name: 'taeyeonLim',
@@ -22,6 +24,7 @@ function Profile({ match }) {
         {username} ({profile.name})
       </h3>
       <p>{profile.description}</p>
+      <WithRouterSample />
     </div>
   );
 }

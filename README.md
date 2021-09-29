@@ -5,12 +5,16 @@
 - yarn add react-router-dom
 - [메인 페이지]와 [페이지 1]에 router 사용하기
 
+<br />
+
 ---
 
 ## Use react-router, link
 
 - 링크로 이동 시, **\<a\> 태그 사용 X**( 페이지 전체가 렌더링 )
   => **Link** 사용.
+
+<br />
 
 ---
 
@@ -35,6 +39,10 @@
   localhost:3000/about?a=2&b=2 | _{a: '2', b: '2'}_
   localhost:3000/about?a=2&b=2&detail=true | _{a: '2', b: '2', detail: 'true'}_
 
+<br />
+
+---
+
 ## react-router 에서의 컴포넌트 렌더링
 
 **[1. Route의 자식으로 렌더링]**
@@ -53,7 +61,7 @@ function App() {
 }
 ```
 
-- 단점
+- 단점:
   route의 props인, **location / history / match 사용 불가.**
 
 **[2. Route component로 렌더링]**
@@ -69,7 +77,7 @@ functino App() {
 }
 ```
 
-- 단점
+- 단점:
   매번 기존 component를 언마운트하고, 새 컴포넌트를 마운트.
 
 **[3. Route render를 이용하여 렌더링]**
@@ -86,15 +94,33 @@ function App() {
 }
 ```
 
-- 장점
-  render props(history, location, match) 사용 가능
+- 장점:
+  render props( history, location, match ) 사용 가능
   inline function에서 리턴하는 컴포넌트 리마운트 X
+
+<br />
 
 ---
 
 ## react router 부가기능
 
-- [history 객체]
-  컴포넌트에서 라우터에 직접 접근 가능해진다. (사용 예시...특정 함수 호출 시, 특정 경로 이동 or 페이지 이탈 방지)
+- **[history 객체]**
+
+  > 컴포넌트에서 라우터에 직접 접근 가능해진다.  
+  > 사용 예시: 특정 함수 호출 시, 특정 경로 이동 or 페이지 이탈 방지<br/>
+
+- **[withRouter 기능]**
+
+  > 하나의 함수
+  > 라우터 컴포넌트가 아닌 곳에서 props( match, location, history ) 사용
+  >
+  > > **[location과 match의 차이점]**  
+  > > location: 어디에서 호출해도 **동일한 Data**를 가리킴
+  > > match: 자신이 **렌더링된 위치 기준**으로 match 값을 받아옴
+  > >
+  > > > ( 현재 위치가 profiles라면, App의 라우터에서 url 파라미터를 받지 않기 때문에 **없음**... )
+  > > > ( 현재 위치가 profile이라면, 경로(path)가 "/profiles/:username"으로 설정되어있고 **파라미터 호출**도 가능 )
+  >
+  > 즉, witRouter는 라우터로 사용되지 않은 컴포넌트에서 조건부로 이동해야할 때 자주 사용 (ex. 로그인)
 
 <br/><br/>
